@@ -1,0 +1,22 @@
+{
+  "name": "date-picker",
+  "version": "1.0.0",
+  "description": "A VanillaJS Date Picker Web Component",
+  "main": "script.js",
+  "scripts": {
+    "dev": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack serve --config webpack.dev.js --open",
+    "start:prod": "webpack serve --config webpack.prod.js --open",
+    "test": "npm test"
+  },
+  "author": "Yusuf Abdulraheem",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.0"
+  }
+}
