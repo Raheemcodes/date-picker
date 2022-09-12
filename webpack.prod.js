@@ -29,5 +29,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'ary-date-picker.js',
+    library: 'someLibName',
+    libraryTarget: 'umd',
   },
 };

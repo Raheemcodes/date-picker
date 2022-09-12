@@ -5,10 +5,7 @@ import { getMonth } from './../../models/month/months.model';
 export const calendar = (picker: DatePicker): string => {
   const { year, month, day } = picker._selected;
   const date: string = [year, month, day].join('-');
-  const calView: CalendarModel = new CalendarModel(date);
-
-  // Validate Date String from input
-  // creating day rendering logic directly
+  const calView: CalendarModel = new CalendarModel(newDate(date, picker));
 
   const monthSlides: string = `
         <div class="calendar-interface">

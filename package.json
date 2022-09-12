@@ -5,7 +5,7 @@
   "main": "script.js",
   "scripts": {
     "dev": "webpack --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "prod": "webpack --config webpack.prod.js",
     "start": "webpack serve --config webpack.dev.js --open",
     "start:prod": "webpack serve --config webpack.prod.js --open",
     "test": "npm test"

@@ -2,7 +2,7 @@ import { DatePicker } from '../../script';
 import { Day, Month, SlideDay, SlideMonth } from '../date-picker.model';
 import { firstWkDay, getWeekDay } from '../days.model';
 import { getMonthName, MonthDays } from '../month/months.model';
-import { editable } from './../../utility';
+import { editable, parseOutput } from './../../utility';
 import { Selected } from './../date-picker.model';
 import { CalendarSwipe } from './calendar-swipe.model';
 
@@ -15,10 +15,12 @@ export class CalendarModel {
     const value = date.split('-');
 
     this.year = +value[0];
+
     this.day = {
       weekday: getWeekDay(+value[0], +value[1] - 1, +value[2]),
       current: +value[2],
     };
+
     this.month = {
       long: getMonthName(+value[0], +value[1] - 1, +value[2], 'long'),
       short: getMonthName(+value[0], +value[1] - 1, +value[2], 'short'),
@@ -89,12 +91,24 @@ export const updateCalendarTitle = (
     month: +activeDate[1],
     day: +activeDate[2],
   };
+
   calTitleEl.textContent = `${calModel.day.weekday}, ${calModel.month.short} ${calModel.day.current}`;
 };
 
-export const newDate = (): string => {
-  const date: string[] = new Date().toLocaleDateString('en-GB').split('/');
-  return [date[2], date[1], date[0]].join('-');
+export const newDate = (val: string = '', picker?: DatePicker): string => {
+  if (val != '') {
+    const [valYear, valMonth, valDay]: string[] = val.split('-');
+    const newYear: number = +valYear < 100 ? +valYear + 2000 : +valYear;
+    const date: string[] = new Date(Date.UTC(newYear, +valMonth - 1, +valDay))
+      .toLocaleDateString('en-GB')
+      .split('/');
+
+    picker!._selected = { year: +valYear, month: +date[1], day: +date[0] };
+    return [valYear, date[1], date[0]].join('-');
+  } else {
+    const date: string[] = new Date().toLocaleDateString('en-GB').split('/');
+    return [date[2], date[1], date[0]].join('-');
+  }
 };
 
 export const togglePen = (e: Event, swiper: CalendarSwipe) => {

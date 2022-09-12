@@ -11,15 +11,13 @@ import {
   collectInput,
   forceInput,
   initialMinMax,
-  initialVal,
   onScroll,
   parseFormat,
   toggleOpen,
-  _closeCalendar,
 } from './utility';
 import { calendar } from './views/calendar/calendar.view';
 import { months } from './views/month/months.view';
-import { overview, header } from './views/overview';
+import { header, overview } from './views/overview';
 import { years } from './views/year/years.view';
 
 export class DatePicker extends HTMLElement {
@@ -69,7 +67,6 @@ export class DatePicker extends HTMLElement {
     initialMinMax(this);
     this.shadowRoot!.innerHTML = overview(this);
     forceInput(this);
-    initialVal(this);
     addClickListener(this);
     this._construct('calendar');
     collectInput(this);
@@ -126,7 +123,10 @@ export class DatePicker extends HTMLElement {
   }
 }
 
-customElements.define('ary-datepicker', DatePicker);
+customElements.define('aray-datepicker', DatePicker);
+// export const createDatePicker = (name: string) => {
+//   customElements.define(name, DatePicker);
+// };
 
 // FA0606 - red
 // FA5E06 - orange

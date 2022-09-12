@@ -311,7 +311,7 @@ export const updateValue = (picker: DatePicker, val: string) => {
   });
 
   if (!!picker.value && !limit) {
-    picker.valueAsNumber = Date.UTC(+year, +month, +day);
+    picker.valueAsNumber = Date.UTC(+year, +month - 1, +day);
     picker.valueAsDate = new Date(picker.valueAsNumber);
     picker._selected = {
       year: +year,
@@ -353,12 +353,6 @@ export const initialMinMax = (picker: DatePicker) => {
   if (min >= max) {
     throw Error('min attribute value must not be greater than max');
   }
-};
-
-export const initialVal = (picker: DatePicker) => {
-  const { year, month, day } = picker._selected;
-
-  changeVal(picker, `${year}-${month}-${day}`);
 };
 
 export const changeVal = (picker: DatePicker, val: string) => {
