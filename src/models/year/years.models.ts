@@ -1,6 +1,7 @@
 import { DatePicker } from '../../script';
 import { YearSwipe } from './years-swipe.model';
 import { YearRange } from '../date-picker.model';
+
 export const getYear = (year: number, month: number, day: number): number => {
   const date: number = Date.UTC(year, month, day);
 
