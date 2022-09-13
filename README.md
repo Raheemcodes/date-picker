@@ -10,5 +10,4 @@
 
 2. ## **CLI**
 
-   - Run npm i aray-datepicker in your CLI. You can now import the createDatePicker Function by passing import { createDatePicker } from 'aray-datepicker' in your JS file. Then call createDatePicker('date-picker'). You can now use the &lt;date-picker>&lt;/date-picker> tag in your HTML document
-     Attributes
+   - Run npm i aray-datepicker in your CLI. You can now import the createDatePicker Function by passing import { createDatePicker } from 'aray-datepicker' in your JS file. Then call createDatePicker('date-picker'). You can now use the &lt;date-picker>&lt;/date-picker> tag in your HTML document.
