@@ -51,3 +51,7 @@
     the aria-label attribute containing the same value specified.
   </dd>
 </dl>
+
+##### Note -
+
+> Pass this commented HTML below in between the component opening and closing tag to test your custom input. Style it to your taste. the slot attribute containing value of `input` is compulsory. An Icon is not necessary. If you use an icon connect it to the date picker tag passing the same value the the icon aria-label attribute to the date picker icon attribute
