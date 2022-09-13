@@ -8,7 +8,7 @@
     "prod": "webpack --config webpack.prod.js",
     "start": "webpack serve --config webpack.dev.js --open",
     "start:prod": "webpack serve --config webpack.prod.js --open",
-    "test": "jest --watch"
+    "test": "jest --watchAll"
   },
   "author": "Yusuf Abdulraheem",
   "license": "ISC",
