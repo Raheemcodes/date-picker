@@ -19,8 +19,16 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: ['ts-loader'],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'images/',
+          name: '[name].png',
+        },
       },
     ],
   },
@@ -30,7 +38,5 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'ary-date-picker.js',
-    library: 'ary-datepicker',
-    libraryTarget: 'umd',
   },
 };

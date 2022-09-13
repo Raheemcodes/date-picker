@@ -13,6 +13,7 @@
   "author": "Yusuf Abdulraheem",
   "license": "ISC",
   "devDependencies": {
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "ts-loader": "^9.3.1",
     "webpack": "^5.74.0",
