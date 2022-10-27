@@ -123,10 +123,10 @@ export class DatePicker extends HTMLElement {
   }
 }
 
-// customElements.define('aray-datepicker', DatePicker);
-export const createDatePicker = (name: string) => {
-  customElements.define(name, DatePicker);
-};
+customElements.define('aray-datepicker', DatePicker);
+// export const createDatePicker = (name: string) => {
+//   customElements.define(name, DatePicker);
+// };
 
 // FA0606 - red
 // FA5E06 - orange

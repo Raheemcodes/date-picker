@@ -8,8 +8,7 @@ export const styles = (picker: DatePicker): string => {
   const mainColor: string = picker._theme;
   const lightened: string = picker.color.lightness(mainColor, 50);
 
-  return `
-    
+  return `    
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
 
       * {
