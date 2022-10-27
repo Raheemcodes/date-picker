@@ -16,7 +16,13 @@
 
 2. **CLI**
 
-   - Run npm i aray-datepicker in your CLI. You can now import the createDatePicker Function by passing
+   - Run
+
+   ```js
+   npm i aray-datepicker
+   ```
+
+   in your CLI. You can now import the createDatePicker Function by passing
 
    ```js
    import { createDatePicker } from 'aray-datepicker';
