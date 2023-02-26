@@ -143,9 +143,9 @@ export const minMaxCalc = (picker: DatePicker, date: Selected): boolean => {
   const [minYear, minMon]: string[] = picker.min.split('-');
   const [maxYear, maxMon]: string[] = picker.max.split('-');
   const { year, month }: Selected = date;
-  const minDate: number = Date.UTC(+minYear, +minMon - 2 - 1);
-  const maxDate: number = Date.UTC(+maxYear, +maxMon + 2 - 1);
-  const curDate: number = Date.UTC(year, +month - 1);
+  const minDate: number = +minYear + +minMon - 2 - 1;
+  const maxDate: number = +maxYear + +maxMon + 2 - 1;
+  const curDate: number = year + +month - 1;
 
   if (curDate > minDate && curDate < maxDate) {
     return true;
